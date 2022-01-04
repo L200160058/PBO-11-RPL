@@ -1,0 +1,38 @@
+import java.awt.Container; 
+import java.awt.FlowLayout; 
+import java.awt.event.ActionEvent; 
+import java.awt.event.ActionListener; 
+import javax.swing.JButton; 
+import javax.swing.JFrame; 
+import javax.swing.JTextField; 
+public class cobagui { 
+public cobagui(){ 
+JFrame frame = new JFrame(); 
+JButton btnHalo = new JButton("Tombol 1"); 
+JButton btnSelamatTinggal = new JButton("Tombol 2"); 
+final JTextField txtPesan = new JTextField(20); 
+txtPesan.setText("Tulisan muncul disini"); 
+ 
+ btnHalo.addActionListener (new ActionListener() { 
+ public void actionPerformed(ActionEvent event) { 
+ txtPesan.setText("Halo Beb, Lagi apa? :D"); 
+ } 
+}); 
+ btnSelamatTinggal.addActionListener (new ActionListener() { 
+ public void actionPerformed(ActionEvent event) { 
+ txtPesan.setText("Bye bye..."); 
+ } 
+});
+Container contentPane = frame.getContentPane(); 
+contentPane.setLayout(new FlowLayout()); 
+contentPane.add(btnHalo); 
+contentPane.add(btnSelamatTinggal); 
+contentPane.add(txtPesan); 
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+frame.pack(); 
+frame.show(); 
+} 
+public static void main(String[] args) { 
+ new cobagui(); 
+} 
+}
